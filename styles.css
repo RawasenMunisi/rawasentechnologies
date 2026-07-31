@@ -49,21 +49,27 @@ header.site{
 }
 
 /* ---- Toolbar (theme + language toggles) ---- */
-.toolbar-toggles{
-  position:absolute;
-  top:30px; right:6vw;
-  display:inline-flex;
-  gap:8px;
-  z-index:30;
-}
-.lang-toggle,
 .theme-toggle{
+  position:absolute;
+  top:30px; left:6vw;
   display:inline-flex;
   gap:2px;
   background:var(--panel);
   border:1px solid var(--line);
   border-radius:20px;
   padding:3px;
+  z-index:30;
+}
+.lang-toggle{
+  position:absolute;
+  top:30px; right:6vw;
+  display:inline-flex;
+  gap:2px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:3px;
+  z-index:30;
 }
 .lang-btn,
 .theme-btn{
@@ -83,9 +89,10 @@ header.site{
 .lang-btn.active,
 .theme-btn.active{ background:var(--blue); color:#fff; }
 @media (max-width:760px){
-  .toolbar-toggles{ top:20px; right:56px; gap:4px; }
-  .lang-btn{ padding:4px 9px; font-size:10px; }
+  .theme-toggle{ top:64px; left:6vw; padding:2px; }
   .theme-btn{ padding:4px 7px; font-size:11px; }
+  .lang-toggle{ top:20px; right:56px; padding:2px; }
+  .lang-btn{ padding:4px 9px; font-size:10px; }
 }
 header.site .logo{
   display:inline-block;
