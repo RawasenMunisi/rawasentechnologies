@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Rawasen Technologies</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="favicon-180.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site">
+  <a href="index.html"><img class="logo" src="logo.png" alt="Rawasen Technologies"></a>
+  <div class="lang-toggle" id="langToggle">
+    <button type="button" class="lang-btn active" data-lang="en">EN</button>
+    <button type="button" class="lang-btn" data-lang="sw">SW</button>
+  </div>
+  <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="primary">
+    <a href="index.html" data-sw="Nyumbani">Home</a>
+    <a href="about.html" data-sw="Kuhusu">About</a>
+    <a href="services.html" data-sw="Huduma">Services</a>
+    <a href="contact.html" aria-current="page" data-sw="Wasiliana Nasi">Contact</a>
+  </nav>
+</header>
+
+<section class="section tight">
+  <p class="eyebrow" data-sw="Wasiliana Nasi">Get in touch</p>
+  <p class="lede" data-sw="Tuzungumze kuhusu mtandao wako">Let's talk about your network</p>
+  <p class="copy" data-sw="Tuambie kuhusu eneo lako, muda wako, au tatizo unalotaka kulitatua. Tutakujibu ndani ya siku moja ya kazi.">
+    Tell us about your site, your timeline, or the problem you're
+    trying to solve. We'll get back to you within one business day.
+  </p>
+</section>
+
+<section class="section panel">
+  <div class="section-inner contact-grid">
+    <form class="contact-form" action="#" method="POST">
+      <label>
+        <span data-sw="Jina">Name</span>
+        <input type="text" name="name" placeholder="Your full name" data-sw-placeholder="Jina lako kamili" required>
+      </label>
+      <label>
+        <span data-sw="Barua Pepe">Email</span>
+        <input type="email" name="email" placeholder="name@company.com" required>
+      </label>
+      <label>
+        <span data-sw="Simu">Phone</span>
+        <input type="tel" name="phone" placeholder="+255 ...">
+      </label>
+      <label>
+        <span data-sw="Ujumbe">Message</span>
+        <textarea name="message" rows="5" placeholder="Tell us about your project" data-sw-placeholder="Tuambie kuhusu mradi wako" required></textarea>
+      </label>
+      <button type="submit" data-sw="Tuma Ujumbe">Send message</button>
+    </form>
+
+    <div class="contact-details">
+      <div class="detail">
+        <div class="num" data-sw="Barua Pepe">Email</div>
+        <p>info@rawasentechnologies.co.tz</p>
+      </div>
+      <div class="detail">
+        <div class="num" data-sw="Simu">Phone</div>
+        <p><a href="tel:0796984976" style="color:var(--ink);">0796 984 976</a></p>
+        <p><a href="https://wa.me/255796984976" target="_blank" rel="noopener" style="color:var(--blue); font-weight:500;" data-sw="Ongea Nasi WhatsApp →">Chat on WhatsApp →</a></p>
+      </div>
+      <div class="detail">
+        <div class="num" data-sw="Mahali">Location</div>
+        <p>Dar es Salaam, Tanzania</p>
+      </div>
+      <div class="detail">
+        <div class="num" data-sw="Muda wa Kazi">Hours</div>
+        <p data-sw="Jumatatu – Ijumaa, 08:00 – 17:00">Mon – Fri, 08:00 – 17:00</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="map-band">
+  <iframe
+    title="Rawasen Technologies location — Dar es Salaam, Tanzania"
+    src="https://www.google.com/maps?q=Dar%20es%20Salaam%2C%20Tanzania&output=embed"
+    width="100%" height="100%" style="border:0;" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</section>
+
+<footer class="site">
+  <span data-sw="© 2026 Rawasen Technologies — Ushauri wa Mitandao">© 2026 Rawasen Technologies — Network Consulting</span>
+  <span class="footer-links">
+    <a href="privacy.html" data-sw="Sera ya Faragha">Privacy Policy</a> · <a href="terms.html" data-sw="Masharti ya Huduma">Terms of Service</a>
+  </span>
+</footer>
+
+<script src="menu.js"></script>
+<script src="lang.js"></script>
+</body>
+</html>
