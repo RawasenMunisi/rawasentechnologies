@@ -48,28 +48,23 @@ header.site{
   position:relative;
 }
 
-/* ---- Toolbar (theme + language toggles) ---- */
-.theme-toggle{
-  position:absolute;
-  top:30px; left:6vw;
-  display:inline-flex;
-  gap:2px;
+/* ---- Top utility bar (theme + language toggles) ---- */
+.top-bar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 6vw;
   background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:3px;
-  z-index:30;
+  border-bottom:1px solid var(--line);
 }
+.theme-toggle,
 .lang-toggle{
-  position:absolute;
-  top:30px; right:6vw;
   display:inline-flex;
   gap:2px;
-  background:var(--panel);
+  background:var(--white);
   border:1px solid var(--line);
   border-radius:20px;
   padding:3px;
-  z-index:30;
 }
 .lang-btn,
 .theme-btn{
@@ -89,9 +84,8 @@ header.site{
 .lang-btn.active,
 .theme-btn.active{ background:var(--blue); color:#fff; }
 @media (max-width:760px){
-  .theme-toggle{ top:64px; left:6vw; padding:2px; }
+  .top-bar{ padding:8px 6vw; }
   .theme-btn{ padding:4px 7px; font-size:11px; }
-  .lang-toggle{ top:20px; right:56px; padding:2px; }
   .lang-btn{ padding:4px 9px; font-size:10px; }
 }
 header.site .logo{
