@@ -1,65 +1,45 @@
 (function(){
   document.addEventListener('DOMContentLoaded', function(){
-    var toggle = document.getElementById('menuToggle');
     var nav = document.querySelector('nav.primary');
-    if(!toggle || !nav) return;
+    if(!nav) return;
 
     var submenuToggle = nav.querySelector('.submenu-toggle');
     var submenu = nav.querySelector('.submenu');
+    if(!submenuToggle || !submenu) return;
 
     function closeSubmenu(){
-      if(!submenuToggle || !submenu) return;
       submenuToggle.classList.remove('open');
       submenu.classList.remove('open');
       submenuToggle.setAttribute('aria-expanded', 'false');
     }
 
-    function closeMenu(){
-      toggle.classList.remove('open');
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      closeSubmenu();
+    function openSubmenu(){
+      submenuToggle.classList.add('open');
+      submenu.classList.add('open');
+      submenuToggle.setAttribute('aria-expanded', 'true');
     }
 
-    function openMenu(){
-      toggle.classList.add('open');
-      nav.classList.add('open');
-      toggle.setAttribute('aria-expanded', 'true');
-    }
-
-    toggle.addEventListener('click', function(){
-      var isOpen = nav.classList.contains('open');
-      if(isOpen){ closeMenu(); } else { openMenu(); }
+    submenuToggle.addEventListener('click', function(e){
+      e.preventDefault();
+      if(submenu.classList.contains('open')){ closeSubmenu(); }
+      else{ openSubmenu(); }
     });
 
-    if(submenuToggle && submenu){
-      submenuToggle.addEventListener('click', function(e){
-        e.preventDefault();
-        var isOpen = submenu.classList.contains('open');
-        if(isOpen){ closeSubmenu(); }
-        else{
-          submenuToggle.classList.add('open');
-          submenu.classList.add('open');
-          submenuToggle.setAttribute('aria-expanded', 'true');
-        }
-      });
-    }
-
-    // Close menu when a nav link is tapped
-    nav.querySelectorAll('a').forEach(function(link){
-      link.addEventListener('click', closeMenu);
+    // Close the dropdown once a service link is tapped
+    submenu.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', closeSubmenu);
     });
 
-    // Close menu if window is resized back to desktop width
-    window.addEventListener('resize', function(){
-      if(window.innerWidth > 760){ closeMenu(); }
-    });
-
-    // Close menu on outside tap
+    // Close on outside tap
     document.addEventListener('click', function(e){
-      if(!nav.classList.contains('open')) return;
-      if(nav.contains(e.target) || toggle.contains(e.target)) return;
-      closeMenu();
+      if(!submenu.classList.contains('open')) return;
+      if(submenu.contains(e.target) || submenuToggle.contains(e.target)) return;
+      closeSubmenu();
+    });
+
+    // Close if resized to desktop width
+    window.addEventListener('resize', function(){
+      if(window.innerWidth > 760){ closeSubmenu(); }
     });
   });
 })();
