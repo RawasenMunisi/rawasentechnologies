@@ -4,10 +4,21 @@
     var nav = document.querySelector('nav.primary');
     if(!toggle || !nav) return;
 
+    var submenuToggle = nav.querySelector('.submenu-toggle');
+    var submenu = nav.querySelector('.submenu');
+
+    function closeSubmenu(){
+      if(!submenuToggle || !submenu) return;
+      submenuToggle.classList.remove('open');
+      submenu.classList.remove('open');
+      submenuToggle.setAttribute('aria-expanded', 'false');
+    }
+
     function closeMenu(){
       toggle.classList.remove('open');
       nav.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
+      closeSubmenu();
     }
 
     function openMenu(){
@@ -20,6 +31,19 @@
       var isOpen = nav.classList.contains('open');
       if(isOpen){ closeMenu(); } else { openMenu(); }
     });
+
+    if(submenuToggle && submenu){
+      submenuToggle.addEventListener('click', function(e){
+        e.preventDefault();
+        var isOpen = submenu.classList.contains('open');
+        if(isOpen){ closeSubmenu(); }
+        else{
+          submenuToggle.classList.add('open');
+          submenu.classList.add('open');
+          submenuToggle.setAttribute('aria-expanded', 'true');
+        }
+      });
+    }
 
     // Close menu when a nav link is tapped
     nav.querySelectorAll('a').forEach(function(link){

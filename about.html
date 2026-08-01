@@ -30,7 +30,18 @@
   <nav class="primary">
     <a href="index.html" data-sw="Nyumbani">Home</a>
     <a href="about.html" aria-current="page" data-sw="Kuhusu">About</a>
-    <a href="services.html" data-sw="Huduma">Services</a>
+    <div class="nav-item">
+      <div class="nav-item-row">
+        <a href="services.html" data-sw="Huduma">Services</a>
+        <button type="button" class="submenu-toggle" aria-label="Toggle services submenu" aria-expanded="false">▾</button>
+      </div>
+      <div class="submenu">
+        <a href="services.html#telecom" data-sw="📡 Mawasiliano">📡 Telecommunications</a>
+        <a href="services.html#software" data-sw="💻 Uendelezaji wa Programu">💻 Software Development</a>
+        <a href="services.html#it" data-sw="🖥️ Suluhisho za IT">🖥️ IT Solutions</a>
+        <a href="services.html#security" data-sw="🛡️ Mifumo ya Ulinzi">🛡️ Security Systems</a>
+      </div>
+    </div>
     <a href="contact.html" data-sw="Wasiliana Nasi">Contact</a>
   </nav>
 </header>
