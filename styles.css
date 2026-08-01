@@ -95,11 +95,15 @@ header.site .logo{
 }
 nav.primary{
   margin-top:18px;
-  display:flex;
+  display:grid;
+  grid-template-columns: repeat(4, 170px);
   justify-content:center;
-  gap:40px;
+  column-gap:30px;
   padding-bottom:18px;
+  text-align:center;
 }
+nav.primary .nav-item{ display:block; }
+nav.primary .nav-item-row{ display:block; }
 
 @media (max-width:760px){
   header.site{
