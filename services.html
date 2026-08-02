@@ -44,6 +44,7 @@
 </header>
 
 <section class="section tight services-hero">
+  <span class="beacon" id="servicesBeacon" aria-hidden="true"></span>
   <p class="eyebrow" data-sw="Huduma Zetu">Our Services</p>
   <p class="lede" data-sw="Suluhisho Mahiri za Kiteknolojia kwa Mustakabali Ulioungana">Smart Technology Solutions for a Connected Future</p>
   <p class="copy" data-sw="Kuanzia miundombinu ya mawasiliano na programu maalum hadi msaada wa IT na mifumo ya ulinzi, Rawasen Technologies inatoa suluhisho zote biashara na nyumba zinazohitaji ili kubaki zikiwa zimeunganika, zenye tija, na salama.">
@@ -176,5 +177,38 @@
 <script src="menu.js"></script>
 <script src="theme.js"></script>
 <script src="lang.js"></script>
+<script>
+(function(){
+  var hero = document.querySelector('.services-hero');
+  var dot = document.getElementById('servicesBeacon');
+  if(!hero || !dot) return;
+
+  var TIP = {
+    light: { imgW: 1536, imgH: 1024, x: 789, y: 75 },
+    dark:  { imgW: 1536, imgH: 1024, x: 782, y: 79 }
+  };
+
+  function position(){
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    var t = isDark ? TIP.dark : TIP.light;
+    var rect = hero.getBoundingClientRect();
+    var containerW = rect.width, containerH = rect.height;
+    if(containerW <= 0 || containerH <= 0) return;
+    var scale = Math.max(containerW / t.imgW, containerH / t.imgH);
+    var dispW = t.imgW * scale, dispH = t.imgH * scale;
+    var offsetX = (dispW - containerW) / 2;
+    var offsetY = (dispH - containerH) / 2;
+    var x = (t.x * scale) - offsetX;
+    var y = (t.y * scale) - offsetY;
+    dot.style.left = x + 'px';
+    dot.style.top = y + 'px';
+    dot.style.visibility = 'visible';
+  }
+
+  position();
+  window.addEventListener('resize', position);
+  new MutationObserver(position).observe(document.documentElement, { attributes:true, attributeFilter:['data-theme'] });
+})();
+</script>
 </body>
 </html>

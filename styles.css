@@ -332,22 +332,28 @@ html[data-theme="dark"] .photo-band.pb-services{
 /* ---- Services page hero (intro section with tower background) ---- */
 .services-hero{
   position:relative;
-  padding-top:120px;
-  padding-bottom:90px;
+  min-height:58vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
   background:
-    linear-gradient(180deg, rgba(6,12,24,0.72) 0%, rgba(6,12,24,0.6) 55%, rgba(6,12,24,0.82) 100%),
+    linear-gradient(180deg, rgba(6,12,24,0.68) 0%, rgba(6,12,24,0.5) 55%, rgba(6,12,24,0.8) 100%),
     url('services-photo.jpg');
   background-size:cover;
-  background-position:center 40%;
+  background-position:center;
+  overflow:hidden;
 }
 html[data-theme="dark"] .services-hero{
   background-image:
-    linear-gradient(180deg, rgba(6,12,24,0.72) 0%, rgba(6,12,24,0.6) 55%, rgba(6,12,24,0.82) 100%),
+    linear-gradient(180deg, rgba(6,12,24,0.68) 0%, rgba(6,12,24,0.5) 55%, rgba(6,12,24,0.8) 100%),
     url('services-photo-dark.jpg');
 }
 .services-hero .eyebrow{ color:#9FD0FF; }
 .services-hero .lede{ color:#fff; }
 .services-hero .copy{ color:#D7E4F2; }
+@media (max-width:760px){
+  .services-hero{ min-height:64vh; }
+}
 
 /* ---- Cards (services) ---- */
 .grid{
