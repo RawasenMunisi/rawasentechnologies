@@ -332,6 +332,8 @@ html[data-theme="dark"] .photo-band.pb-services{
 /* ---- Services page hero (intro section with tower background) ---- */
 .services-hero{
   position:relative;
+  max-width:none;
+  width:100%;
   min-height:58vh;
   display:flex;
   flex-direction:column;
@@ -340,7 +342,7 @@ html[data-theme="dark"] .photo-band.pb-services{
     linear-gradient(180deg, rgba(6,12,24,0.68) 0%, rgba(6,12,24,0.5) 55%, rgba(6,12,24,0.8) 100%),
     url('services-photo.jpg');
   background-size:cover;
-  background-position:center;
+  background-position:center top;
   overflow:hidden;
 }
 html[data-theme="dark"] .services-hero{
