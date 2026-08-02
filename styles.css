@@ -198,12 +198,6 @@ nav.primary a[aria-current="page"]{
   background-position:center;
   overflow:hidden;
 }
-html[data-theme="dark"] .hero{
-  background-image:
-    linear-gradient(90deg, rgba(6,12,24,0.55) 0%, rgba(6,12,24,0.35) 38%, rgba(6,12,24,0.08) 62%, rgba(6,12,24,0.18) 100%),
-    linear-gradient(0deg, rgba(6,12,24,0.32) 0%, rgba(6,12,24,0.02) 45%),
-    url('hero-photo-dark.jpg');
-}
 .hero-inner{
   padding:0 6vw 64px;
   max-width:var(--max);
@@ -328,6 +322,11 @@ html[data-theme="dark"] .hero{
     url('services-photo.jpg');
   background-size:cover;
   background-position:center 55%;
+}
+html[data-theme="dark"] .photo-band.pb-services{
+  background-image:
+    linear-gradient(180deg, rgba(15,30,51,0.15), rgba(15,30,51,0.4)),
+    url('services-photo-dark.jpg');
 }
 
 /* ---- Cards (services) ---- */
@@ -513,12 +512,6 @@ footer.site .footer-links a:hover{ color:var(--blue); }
       url('hero-photo-mobile.jpg');
     background-position:center;
     background-size:cover;
-  }
-  html[data-theme="dark"] .hero{
-    background-image:
-      linear-gradient(90deg, rgba(6,12,24,0.55) 0%, rgba(6,12,24,0.35) 38%, rgba(6,12,24,0.08) 62%, rgba(6,12,24,0.18) 100%),
-      linear-gradient(0deg, rgba(6,12,24,0.32) 0%, rgba(6,12,24,0.02) 45%),
-      url('hero-photo-mobile-dark.jpg');
   }
 }
 
