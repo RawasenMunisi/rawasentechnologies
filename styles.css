@@ -329,6 +329,26 @@ html[data-theme="dark"] .photo-band.pb-services{
     url('services-photo-dark.jpg');
 }
 
+/* ---- Services page hero (intro section with tower background) ---- */
+.services-hero{
+  position:relative;
+  padding-top:120px;
+  padding-bottom:90px;
+  background:
+    linear-gradient(180deg, rgba(6,12,24,0.72) 0%, rgba(6,12,24,0.6) 55%, rgba(6,12,24,0.82) 100%),
+    url('services-photo.jpg');
+  background-size:cover;
+  background-position:center 40%;
+}
+html[data-theme="dark"] .services-hero{
+  background-image:
+    linear-gradient(180deg, rgba(6,12,24,0.72) 0%, rgba(6,12,24,0.6) 55%, rgba(6,12,24,0.82) 100%),
+    url('services-photo-dark.jpg');
+}
+.services-hero .eyebrow{ color:#9FD0FF; }
+.services-hero .lede{ color:#fff; }
+.services-hero .copy{ color:#D7E4F2; }
+
 /* ---- Cards (services) ---- */
 .grid{
   display:grid;
