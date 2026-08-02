@@ -14,7 +14,7 @@
 <div class="top-bar">
   <div class="theme-toggle" id="themeToggle">
     <button type="button" class="theme-btn active" data-theme-btn="light">☀️</button>
-    <button type="button" class="theme-btn" data-theme-btn="dark">🌙</button>
+    <button type="button" claass="theme-btn" data-theme-btn="dark">🌙</button>
   </div>
   <div class="lang-toggle" id="langToggle">
     <button type="button" class="lang-btn active" data-lang="en">EN</button>
@@ -215,7 +215,7 @@
     var scale = Math.max(containerW / IMG_W, containerH / IMG_H);
     var dispW = IMG_W * scale, dispH = IMG_H * scale;
     var offsetX = (dispW - containerW) / 2;
-    var offsetY = (dispH - containerH) / 2;
+    var offsetY = 0; // background-position: center TOP
 
     dots.forEach(function(dot, i){
       var l = lights[i];
