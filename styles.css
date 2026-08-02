@@ -95,15 +95,11 @@ header.site .logo{
 }
 nav.primary{
   margin-top:18px;
-  display:grid;
-  grid-template-columns: repeat(4, 170px);
+  display:flex;
   justify-content:center;
-  column-gap:30px;
+  gap:40px;
   padding-bottom:18px;
-  text-align:center;
 }
-nav.primary .nav-item{ display:block; }
-nav.primary .nav-item-row{ display:block; }
 
 @media (max-width:760px){
   header.site{
@@ -202,6 +198,12 @@ nav.primary a[aria-current="page"]{
   background-position:center;
   overflow:hidden;
 }
+html[data-theme="dark"] .hero{
+  background-image:
+    linear-gradient(90deg, rgba(6,12,24,0.55) 0%, rgba(6,12,24,0.35) 38%, rgba(6,12,24,0.08) 62%, rgba(6,12,24,0.18) 100%),
+    linear-gradient(0deg, rgba(6,12,24,0.32) 0%, rgba(6,12,24,0.02) 45%),
+    url('hero-photo-dark.jpg');
+}
 .hero-inner{
   padding:0 6vw 64px;
   max-width:var(--max);
@@ -234,10 +236,8 @@ nav.primary a[aria-current="page"]{
   animation:beaconBlink 1.6s infinite;
   pointer-events:none;
   z-index:2;
+  visibility:hidden;
 }
-.beacon-1{ left:45.07%; top:8.31%; }
-.beacon-2{ left:48.59%; top:12.47%; animation-delay:0.4s; }
-.beacon-3{ left:52.83%; top:7.29%; animation-delay:0.8s; }
 @keyframes beaconBlink{
   0%, 35%{ opacity:1; }
   45%, 85%{ opacity:0.05; }
@@ -321,6 +321,13 @@ nav.primary a[aria-current="page"]{
     url('about-photo.jpg');
   background-size:cover;
   background-position:center 40%;
+}
+.photo-band.pb-services{
+  background:
+    linear-gradient(180deg, rgba(15,30,51,0.15), rgba(15,30,51,0.4)),
+    url('services-photo.jpg');
+  background-size:cover;
+  background-position:center 55%;
 }
 
 /* ---- Cards (services) ---- */
@@ -507,12 +514,12 @@ footer.site .footer-links a:hover{ color:var(--blue); }
     background-position:center;
     background-size:cover;
   }
-  .beacon{
-    display:block;
-    left:50.64%; top:12.5%;
-    animation-delay:0s;
+  html[data-theme="dark"] .hero{
+    background-image:
+      linear-gradient(90deg, rgba(6,12,24,0.55) 0%, rgba(6,12,24,0.35) 38%, rgba(6,12,24,0.08) 62%, rgba(6,12,24,0.18) 100%),
+      linear-gradient(0deg, rgba(6,12,24,0.32) 0%, rgba(6,12,24,0.02) 45%),
+      url('hero-photo-mobile-dark.jpg');
   }
-  .beacon-2, .beacon-3{ display:none; }
 }
 
 /* ---- Clickable expertise cards ---- */
