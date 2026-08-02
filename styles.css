@@ -372,6 +372,15 @@ html[data-theme="dark"] .services-hero{
   45%, 85%{ opacity:0.45; }
   95%, 100%{ opacity:1; }
 }
+
+/* This particular light sits closer to camera/haze in the photo — dial it back */
+#sBeacon1{
+  width:6px !important; height:6px !important;
+  margin:-3px 0 0 -3px !important;
+  box-shadow:
+    0 0 4px 1px rgba(255,45,31,0.6),
+    0 0 8px 3px rgba(255,45,31,0.3) !important;
+}
 @media (max-width:760px){
   .services-hero{
     min-height:64vh;
