@@ -44,7 +44,10 @@
 </header>
 
 <section class="section tight services-hero">
-  <span class="beacon" id="servicesBeacon" aria-hidden="true"></span>
+  <span class="beacon" id="sBeacon0" aria-hidden="true"></span>
+  <span class="beacon" id="sBeacon1" aria-hidden="true"></span>
+  <span class="beacon" id="sBeacon2" aria-hidden="true"></span>
+  <span class="beacon" id="sBeacon3" aria-hidden="true"></span>
   <p class="eyebrow" data-sw="Huduma Zetu">Our Services</p>
   <p class="lede" data-sw="Suluhisho Mahiri za Kiteknolojia kwa Mustakabali Ulioungana">Smart Technology Solutions for a Connected Future</p>
   <p class="copy" data-sw="Kuanzia miundombinu ya mawasiliano na programu maalum hadi msaada wa IT na mifumo ya ulinzi, Rawasen Technologies inatoa suluhisho zote biashara na nyumba zinazohitaji ili kubaki zikiwa zimeunganika, zenye tija, na salama.">
@@ -180,29 +183,50 @@
 <script>
 (function(){
   var hero = document.querySelector('.services-hero');
-  var dot = document.getElementById('servicesBeacon');
-  if(!hero || !dot) return;
+  var dots = [
+    document.getElementById('sBeacon0'),
+    document.getElementById('sBeacon1'),
+    document.getElementById('sBeacon2'),
+    document.getElementById('sBeacon3')
+  ];
+  if(!hero || !dots[0]) return;
 
-  var TIP = {
-    light: { imgW: 1536, imgH: 1024, x: 789, y: 75 },
-    dark:  { imgW: 1536, imgH: 1024, x: 782, y: 79 }
+  var IMG_W = 1536, IMG_H = 1024;
+  var LIGHTS = {
+    // Light-mode photo only shows the top obstruction light.
+    light: [
+      { x: 789, y: 75 }
+    ],
+    // Dark-mode (dusk) photo shows the top light plus 3 base lights.
+    dark: [
+      { x: 782, y: 79 },
+      { x: 608, y: 833 },
+      { x: 775, y: 835 },
+      { x: 910, y: 828 }
+    ]
   };
 
   function position(){
     var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    var t = isDark ? TIP.dark : TIP.light;
+    var lights = isDark ? LIGHTS.dark : LIGHTS.light;
     var rect = hero.getBoundingClientRect();
     var containerW = rect.width, containerH = rect.height;
     if(containerW <= 0 || containerH <= 0) return;
-    var scale = Math.max(containerW / t.imgW, containerH / t.imgH);
-    var dispW = t.imgW * scale, dispH = t.imgH * scale;
+    var scale = Math.max(containerW / IMG_W, containerH / IMG_H);
+    var dispW = IMG_W * scale, dispH = IMG_H * scale;
     var offsetX = (dispW - containerW) / 2;
     var offsetY = (dispH - containerH) / 2;
-    var x = (t.x * scale) - offsetX;
-    var y = (t.y * scale) - offsetY;
-    dot.style.left = x + 'px';
-    dot.style.top = y + 'px';
-    dot.style.visibility = 'visible';
+
+    dots.forEach(function(dot, i){
+      var l = lights[i];
+      if(!l){ dot.style.visibility = 'hidden'; return; }
+      var x = (l.x * scale) - offsetX;
+      var y = (l.y * scale) - offsetY;
+      dot.style.left = x + 'px';
+      dot.style.top = y + 'px';
+      dot.style.animationDelay = (i * 0.35) + 's';
+      dot.style.visibility = 'visible';
+    });
   }
 
   position();
