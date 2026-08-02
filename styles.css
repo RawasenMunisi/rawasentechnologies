@@ -373,7 +373,17 @@ html[data-theme="dark"] .services-hero{
   95%, 100%{ opacity:1; }
 }
 @media (max-width:760px){
-  .services-hero{ min-height:64vh; }
+  .services-hero{
+    min-height:64vh;
+    background-image:
+      linear-gradient(180deg, rgba(6,12,24,0.68) 0%, rgba(6,12,24,0.5) 55%, rgba(6,12,24,0.8) 100%),
+      url('services-photo-mobile.jpg');
+  }
+  html[data-theme="dark"] .services-hero{
+    background-image:
+      linear-gradient(180deg, rgba(6,12,24,0.68) 0%, rgba(6,12,24,0.5) 55%, rgba(6,12,24,0.8) 100%),
+      url('services-photo-mobile-dark.jpg');
+  }
 }
 
 /* ---- Cards (services) ---- */

@@ -191,24 +191,39 @@
   ];
   if(!hero || !dots[0]) return;
 
-  var IMG_W = 1536, IMG_H = 1024;
+  var IMG_W_DESKTOP = 1536, IMG_H_DESKTOP = 1024;
+  var IMG_W_MOBILE = 760, IMG_H_MOBILE = 1024;
   var LIGHTS = {
-    // Light-mode photo only shows the top obstruction light.
-    light: [
-      { x: 789, y: 75 }
-    ],
-    // Dark-mode (dusk) photo shows the top light plus 3 base lights.
-    dark: [
-      { x: 782, y: 79 },
-      { x: 608, y: 833 },
-      { x: 775, y: 835 },
-      { x: 910, y: 828 }
-    ]
+    desktop: {
+      light: [
+        { x: 789, y: 75 }
+      ],
+      dark: [
+        { x: 782, y: 79 },
+        { x: 608, y: 833 },
+        { x: 775, y: 835 },
+        { x: 910, y: 828 }
+      ]
+    },
+    mobile: {
+      light: [
+        { x: 394, y: 75 }
+      ],
+      dark: [
+        { x: 387, y: 79 },
+        { x: 213, y: 833 },
+        { x: 380, y: 835 },
+        { x: 515, y: 828 }
+      ]
+    }
   };
 
   function position(){
     var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    var lights = isDark ? LIGHTS.dark : LIGHTS.light;
+    var isMobile = window.innerWidth <= 760;
+    var IMG_W = isMobile ? IMG_W_MOBILE : IMG_W_DESKTOP;
+    var IMG_H = isMobile ? IMG_H_MOBILE : IMG_H_DESKTOP;
+    var lights = (isMobile ? LIGHTS.mobile : LIGHTS.desktop)[isDark ? 'dark' : 'light'];
     var rect = hero.getBoundingClientRect();
     var containerW = rect.width, containerH = rect.height;
     if(containerW <= 0 || containerH <= 0) return;
