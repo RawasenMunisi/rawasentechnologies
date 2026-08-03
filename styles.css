@@ -655,7 +655,7 @@ footer.site .footer-links a:hover{ color:var(--blue); }
   border-bottom:1px solid var(--line);
   scroll-margin-top:20px;
   background-image:
-    linear-gradient(rgba(255,255,255,0.93), rgba(255,255,255,0.93)),
+    linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)),
     url('services-network-light.jpg');
   background-size:cover;
   background-position:center;
@@ -663,7 +663,7 @@ footer.site .footer-links a:hover{ color:var(--blue); }
 }
 .service-block.alt{
   background-image:
-    linear-gradient(rgba(244,245,247,0.93), rgba(244,245,247,0.93)),
+    linear-gradient(rgba(244,245,247,0.55), rgba(244,245,247,0.55)),
     url('services-network-light.jpg');
   background-size:cover;
   background-position:center;
