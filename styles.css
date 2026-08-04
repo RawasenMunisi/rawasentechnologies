@@ -97,8 +97,18 @@ nav.primary{
   margin-top:18px;
   display:flex;
   justify-content:center;
+  align-items:center;
   gap:40px;
   padding-bottom:18px;
+}
+nav.primary .nav-item{
+  display:flex;
+  align-items:center;
+}
+nav.primary .nav-item-row{
+  display:flex;
+  align-items:center;
+  gap:3px;
 }
 
 @media (max-width:760px){
