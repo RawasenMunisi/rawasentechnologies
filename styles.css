@@ -654,31 +654,8 @@ footer.site .footer-links a:hover{ color:var(--blue); }
   padding:70px 6vw;
   border-bottom:1px solid var(--line);
   scroll-margin-top:20px;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)),
-    url('services-network-light.jpg');
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
 }
-.service-block.alt{
-  background-image:
-    linear-gradient(rgba(244,245,247,0.55), rgba(244,245,247,0.55)),
-    url('services-network-light.jpg');
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-}
-html[data-theme="dark"] .service-block{
-  background-image:
-    linear-gradient(rgba(10,17,40,0.88), rgba(10,17,40,0.88)),
-    url('services-network-dark.jpg');
-}
-html[data-theme="dark"] .service-block.alt{
-  background-image:
-    linear-gradient(rgba(11,21,32,0.88), rgba(11,21,32,0.88)),
-    url('services-network-dark.jpg');
-}
+.service-block.alt{ background:var(--panel); }
 .service-block-inner{ max-width:var(--max); margin:0 auto; }
 .service-head{
   display:flex; align-items:center; gap:16px;
@@ -714,6 +691,8 @@ html[data-theme="dark"] .service-block.alt{
 
 
 
+/* ---- Service section background patterns (SVG, no external images) ---- */
+/* ---- Service section decorative dot/arc patterns removed: plain flat background now, same as Home/About ---- */
 
 /* ---- Same patterns on Home "What We Do" cards (same 4 categories, same order) ---- */
 .section.panel .grid-4 .card:nth-child(1){ background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22200%22%20height%3D%22200%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%233D86C6%22%20stroke-width%3D%221.3%22%20opacity%3D%220.16%22%3E%3Cpath%20d%3D%22M22%2C0%20A22%2C22%200%200%201%200%2C22%22/%3E%3Cpath%20d%3D%22M44%2C0%20A44%2C44%200%200%201%200%2C44%22/%3E%3Cpath%20d%3D%22M66%2C0%20A66%2C66%200%200%201%200%2C66%22/%3E%3Cpath%20d%3D%22M88%2C0%20A88%2C88%200%200%201%200%2C88%22/%3E%3Cpath%20d%3D%22M110%2C0%20A110%2C110%200%200%201%200%2C110%22/%3E%3Cpath%20d%3D%22M132%2C0%20A132%2C132%200%200%201%200%2C132%22/%3E%3Cpath%20d%3D%22M154%2C0%20A154%2C154%200%200%201%200%2C154%22/%3E%3Cpath%20d%3D%22M176%2C0%20A176%2C176%200%200%201%200%2C176%22/%3E%3C/g%3E%3Ccircle%20cx%3D%220%22%20cy%3D%220%22%20r%3D%223%22%20fill%3D%22%233D86C6%22%20opacity%3D%220.16%22/%3E%3C/svg%3E"); background-size:180px 180px; background-position:top left; background-repeat:no-repeat; }
