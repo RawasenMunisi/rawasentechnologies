@@ -94,9 +94,17 @@
 
 <section class="service-block alt" id="software">
   <div class="service-block-inner">
-    <div class="service-head">
-      <span class="service-icon">💻</span>
-      <h2 data-sw="Programu na Suluhisho za Kidijitali">Software &amp; Digital Solutions</h2>
+    <div class="service-head service-head-split">
+      <div class="service-head-title">
+        <span class="service-icon">💻</span>
+        <h2 data-sw="Programu na Suluhisho za Kidijitali">Software &amp; Digital Solutions</h2>
+      </div>
+      <button type="button" class="client-work-pill" id="clientWorkToggle" aria-expanded="false" aria-controls="clientWorkGrid">
+        <svg class="cw-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h3.5l2 2H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg>
+        <span class="cw-label cw-label-closed" data-sw="Kazi za Wateja">Client Work</span>
+        <span class="cw-label cw-label-open" data-sw="Ficha Kazi za Wateja">Hide Client Work</span>
+        <svg class="cw-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
     </div>
     <p class="service-intro" data-sw="Tunabuni na kutengeneza suluhisho za kisasa za kidijitali zinazokidhi mahitaji ya biashara, ikiwemo:">
       We design and develop modern digital solutions tailored to
@@ -113,6 +121,58 @@
       <li data-sw="Programu za Mfumo wa Wingu (Cloud)">Cloud-Based Applications</li>
       <li data-sw="Matengenezo ya Mfumo na Msaada wa Kiufundi">System Maintenance &amp; Technical Support</li>
     </ul>
+
+    <div class="project-grid" id="clientWorkGrid">
+
+      <div class="project-card">
+        <div class="project-browser">
+          <div class="project-browser-bar">
+            <span class="project-dot r"></span>
+            <span class="project-dot y"></span>
+            <span class="project-dot g"></span>
+            <span class="project-url">rawasenmunisi.com</span>
+          </div>
+          <div class="project-preview project-preview-photo">
+            <img src="rawasen-preview.jpg" alt="Rawasen Munisi — RF Engineer Portfolio">
+          </div>
+        </div>
+        <div class="project-body">
+          <h3 data-sw="Portfolio ya Mhandisi wa RF">RF Engineer Portfolio</h3>
+          <p data-sw="Tovuti binafsi yenye lugha 13, mandhari ya mchana/usiku ya moja kwa moja, na taswira za mienendo za mnara wa mawasiliano — iliyojengwa kwa ajili ya mhandisi wa RF anayefanya kazi Afrika Mashariki.">A multilingual personal portfolio (13 languages) with live day/night theming and animated telecom tower visuals — built for an RF engineer working across East Africa.</p>
+          <div class="project-tags">
+            <span class="project-tag" data-sw="Ubunifu wa Wavuti">Web Design</span>
+            <span class="project-tag" data-sw="Lugha 13">13 Languages</span>
+            <span class="project-tag" data-sw="Mandhari Mchana/Usiku">Light/Dark Theme</span>
+          </div>
+          <a class="project-visit" href="https://rawasenmunisi.com" target="_blank" rel="noopener"><span data-sw="Tembelea Site">Visit Site</span> →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-browser">
+          <div class="project-browser-bar">
+            <span class="project-dot r"></span>
+            <span class="project-dot y"></span>
+            <span class="project-dot g"></span>
+            <span class="project-url">rawasenmunisi.com/machamestate</span>
+          </div>
+          <div class="project-preview project-preview-logo">
+            <img src="mascol-logo.png" alt="MASCOL — Machame State Company Limited">
+          </div>
+        </div>
+        <div class="project-body">
+          <h3 data-sw="MASCOL — Ufuatiliaji wa Mizigo">MASCOL — Shipment Tracking</h3>
+          <p data-sw="Tovuti ya kampuni ya usafirishaji (Machame State Company Limited) yenye mfumo wa ufuatiliaji wa mizigo wa moja kwa moja uliojengwa kwa Firebase, dashibodi salama za wateja na wasimamizi, pamoja na msaada kamili wa lugha mbili.">A logistics company website (Machame State Company Limited) with a real-time shipment tracking system built on Firebase, secure customer and admin dashboards, and full bilingual support.</p>
+          <div class="project-tags">
+            <span class="project-tag" data-sw="Firebase">Firebase</span>
+            <span class="project-tag" data-sw="Ufuatiliaji wa Moja kwa Moja">Real-time Tracking</span>
+            <span class="project-tag" data-sw="Lugha Mbili">Bilingual</span>
+          </div>
+          <a class="project-visit" href="https://rawasenmunisi.com/machamestate/" target="_blank" rel="noopener"><span data-sw="Tembelea Site">Visit Site</span> →</a>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -182,6 +242,19 @@
 <script src="menu.js"></script>
 <script src="theme.js"></script>
 <script src="lang.js"></script>
+<script>
+(function(){
+  var toggle = document.getElementById('clientWorkToggle');
+  var grid = document.getElementById('clientWorkGrid');
+  if(!toggle || !grid) return;
+  toggle.addEventListener('click', function(){
+    var isOpen = grid.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    if(isOpen){ grid.scrollIntoView({ behavior:'smooth', block:'nearest' }); }
+  });
+})();
+</script>
 <script>
 (function(){
   var hero = document.querySelector('.services-hero');
