@@ -786,6 +786,13 @@ html[data-theme="dark"] .grid-5 .card[data-modal="m-security"]{ background-image
 @media (max-width:760px){
   .project-grid{ grid-template-columns:1fr; }
 }
+.project-grid-single{
+  grid-template-columns:minmax(0, 460px);
+  justify-content:flex-start;
+}
+@media (max-width:520px){
+  .project-grid-single{ grid-template-columns:1fr; }
+}
 .btn-outline-blue{ display:none; } /* deprecated: replaced by .client-work-pill */
 .project-card{
   border:1px solid var(--line);
